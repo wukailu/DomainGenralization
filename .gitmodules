@@ -1,0 +1,3 @@
+[submodule "custom_docker_image/apex"]
+	path = custom_docker_image/apex
+	url = https://github.com/NVIDIA/apex.git
