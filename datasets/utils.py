@@ -7,6 +7,7 @@ from torch import nn, Tensor
 IMAGENET100PATH = "/data/"
 CIFAR100PATH = "~/.cache/torch/data"
 CIFAR10PATH = "~/.cache/torch/data"
+PACSPATH = "/data/PACS"
 
 class ExampleDataset(Dataset):
     def __init__(self, length=233):
