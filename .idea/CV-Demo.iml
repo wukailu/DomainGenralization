@@ -6,13 +6,10 @@
       <excludeFolder url="file://$MODULE_DIR$/.idea" />
       <excludeFolder url="file://$MODULE_DIR$/custom_docker_image" />
     </content>
-    <orderEntry type="jdk" jdkName="Remote Python 3.7.1 (sftp://kailu@172.16.124.16:22/home/kailu/.conda/envs/wukailu/bin/python3.7)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Remote Python 3.7.4 (sftp://kailu@172.16.124.45:22/home/kailu/miniconda3/envs/wukailu/bin/python3.7)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Jinja2" />
-  </component>
-  <component name="TestRunnerService">
-    <option name="PROJECT_TEST_RUNNER" value="Unittests" />
   </component>
 </module>

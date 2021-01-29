@@ -13,7 +13,7 @@ from datasets.utils import FullDatasetBase, PACSPATH
 
 class SinglePACS(Dataset):
     def __init__(self, subDatasetName, split, transform):
-        self.filename = path.join(PACSPATH, 'kfold', subDatasetName + '_' + split + '.hdf5')
+        self.filename = path.join(PACSPATH, 'split', subDatasetName + '_' + split + '.hdf5')
         self.transform = transform
         self.split = split
         domain_data = h5py.File(self.filename, 'r')
@@ -23,7 +23,7 @@ class SinglePACS(Dataset):
         print('Image: ', self.pacs_imgs.shape, ' Labels: ', self.pacs_labels.shape,
               ' Out Classes: ', len(np.unique(self.pacs_labels)))
         unique, counts = np.unique(self.pacs_labels, return_counts=True)
-        self.num_class = np.amax(unique) + 1
+        self.num_class = int(np.amax(unique) + 1)
         self.max_class_size = np.amax(counts)
 
     def __len__(self):
@@ -107,5 +107,6 @@ class PACS(FullDatasetBase):
 
 if __name__ == "__main__":
     d = PACS(["art_painting", "cartoon", "photo"], "sketch")
+    train_ds = d.gen_train_datasets(transform=d.gen_train_transforms()[0])
     for i in range(10):
-        print(d[i])
+        print(train_ds[i])
