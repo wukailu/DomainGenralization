@@ -115,8 +115,8 @@ class AdvAttack(torch.nn.Module):
         normed_model.to(device)
         normed_model.eval()
         self.attack = load_attack(normed_model, attack_name)
-        self.unnorm = UnNormalize(mean=mean, std=std)
-        self.donorm = Normalize(mean=mean, std=std)
+        self.unnorm = UnNormalize(mean=mean, std=std).to(device)
+        self.donorm = Normalize(mean=mean, std=std).to(device)
 
     def forward(self, images, labels):
         self.eval()
